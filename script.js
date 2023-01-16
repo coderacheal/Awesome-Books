@@ -11,8 +11,6 @@ const form  = document.querySelector('.form');
 const booksDiv = document.querySelector('.books');
 
 
-
-
 form.addEventListener('submit', (event) => {
     event.preventDefault();
 
