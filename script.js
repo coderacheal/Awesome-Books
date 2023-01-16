@@ -32,8 +32,13 @@ function addNewBook(book) {
     `
 }
 
-// const removeButton = document.querySelector('.removeBook');
-// console.log(removeButton)
+
+const removeButton = document.querySelector('.removeBook');
+console.log(removeButton);
+removeButton.forEach(element =>  element.addEventListener('click', () => {
+        element.parentNode.remove();
+    }));
+    
 
 function removeBook() {
 
