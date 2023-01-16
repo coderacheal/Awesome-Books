@@ -2,7 +2,7 @@ class Books {
     constructor(title, author) {
         this.title = title;
         this.author = author;
-        this.BookId = this.BookId;
+        // this.BookId = this.BookId;
     }
 }
 
@@ -25,22 +25,23 @@ form.addEventListener('submit', (event) => {
 
 
 function addNewBook(book) {
-    booksDiv.innerHTML = `
+    const bookUnit = document.createElement('li');
+    bookUnit.innerHTML = `
     <p class="book-name">${book.title}</p>
     <p class="the-auhtor">${book.author}</p>
     <button class='removeBook' >Remove</button>
     `
+    booksDiv.appendChild(bookUnit)
 }
 
 
-const removeButton = document.querySelector('.removeBook');
-console.log(removeButton);
-removeButton.forEach(element =>  element.addEventListener('click', () => {
-        element.parentNode.remove();
-    }));
-    
-
-function removeBook() {
-
+function removeBook(target) {
+    if (target.classList.contains('removeBook')) {
+        target.parentElement.remove();
+    }
 }
 
+
+booksDiv.addEventListener('click', (e) => {
+    removeBook(e.target)
+})
