@@ -6,8 +6,11 @@ class Books {
 }
 
 const bookArchive = [];
+// const bookArchiveLocalStorage = []
 const form  = document.querySelector('.form');
 const booksDiv = document.querySelector('.books');
+const titleInput = document.getElementsByClassName('book-name');
+const authorInput = document.getElementsByClassName('the-auhtor');
 
 
 form.addEventListener('submit', (event) => {
@@ -15,16 +18,22 @@ form.addEventListener('submit', (event) => {
 
     const title = document.querySelector('.book-title').value;
     const author = document.querySelector('.book-author').value;
+    const book = new Books (title, author);
 
-    const book = new Books (title, author)
     bookArchive.push(book);
     addNewBook(book)
-    title.value = '';
-    author.value = '';
-    console.log(book)
+    
+    localStorage.setItem('bookInfo', JSON.stringify(bookArchive));
+    // bookInfo.push(addbookStorage)
+    // displayBooks()
+
+    // const bookInfo = JSON.parse(localStorage.getItem('book'))
 
 })
 
+function displayBooks() {
+
+}
 
 function addNewBook(book) {
     const bookUnit = document.createElement('li');
@@ -48,32 +57,37 @@ booksDiv.addEventListener('click', (e) => {
     removeBook(e.target)
 })
 
-const titleInput = document.getElementsByClassName('book-name');
-const authorInput = document.getElementsByClassName('the-auhtor');
+// if(bookInfo) {
+//     titleInput.value = bookInfo.bookTitle;
+//     authorInput.value = bookInfo.bookAuthor;
 
-const bookInfo = JSON.parse(localStorage.getItem('bookInfo'))
+// }
+
+// bookCollection.push(newBook);
+//   localStorage.setItem('bookCollection', JSON.stringify(bookCollection));
+//   displayBooks();
 
 
-if(bookInfo) {
-    titleInput.value = bookInfo.bookTitle;
-    authorInput.value = bookInfo.bookAuthor;
 
-}
+// if(bookInfo) {
+//     titleInput.value = bookInfo.bookTitle;
+//     authorInput.value = bookInfo.bookAuthor;
 
-form.addEventListener('submit', function (event) {
-    event.preventDefault();
+// }
 
-    const bookTitle = titleInput.value;
-    const bookAuthor = authorInput.value;
+// title.value = '';
+    // author.value = '';
+    // form.addEventListener('submit', function (event) {
+    //     event.preventDefault();
+    
+    // const bookTitle = titleInput.value;
+    // const bookAuthor = authorInput.value;
 
-    const bookInfo = {
-        bookTitle: bookTitle,
-        bookTitle: bookAuthor
-    }
+    // const bookInfo = {
+    //     bookTitle: bookTitle,
+    //     bookAuthor: bookAuthor
+    // }
 
-    localStorage.setItem('bookInfo', JSON.stringify(bookInfo));
-
-})
 
 
 
