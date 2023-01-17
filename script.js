@@ -2,7 +2,6 @@ class Books {
     constructor(title, author) {
         this.title = title;
         this.author = author;
-        // this.BookId = this.BookId;
     }
 }
 
@@ -20,6 +19,9 @@ form.addEventListener('submit', (event) => {
     const book = new Books (title, author)
     bookArchive.push(book);
     addNewBook(book)
+    title.value = '';
+    author.value = '';
+    console.log(book)
 
 })
 
@@ -45,3 +47,33 @@ function removeBook(target) {
 booksDiv.addEventListener('click', (e) => {
     removeBook(e.target)
 })
+
+const titleInput = document.getElementsByClassName('book-name');
+const authorInput = document.getElementsByClassName('the-auhtor');
+
+const bookInfo = JSON.parse(localStorage.getItem('bookInfo'))
+
+
+if(bookInfo) {
+    titleInput.value = bookInfo.bookTitle;
+    authorInput.value = bookInfo.bookAuthor;
+
+}
+
+form.addEventListener('submit', function (event) {
+    event.preventDefault();
+
+    const bookTitle = titleInput.value;
+    const bookAuthor = authorInput.value;
+
+    const bookInfo = {
+        bookTitle: bookTitle,
+        bookTitle: bookAuthor
+    }
+
+    localStorage.setItem('bookInfo', JSON.stringify(bookInfo));
+
+})
+
+
+

@@ -1,9 +1,25 @@
 ul {
   list-style-type: none;
 	padding: 0;
+	/* border: ; */
 }
 
 li {
   list-style-type: none;
-	padding: 0;
+	/* padding: 0; */
+	width: 350px;
+	border-bottom: 1px solid gray;
+
+	padding-bottom: 10px;
+	/* border-block-start-width: ; */
+	/* border */
+	/* border-bottom-height: 2px; */
+}
+
+.add {
+	margin-bottom: 15px;
+}
+
+main {
+	margin-left: 20px;
 }
