@@ -8,7 +8,6 @@ class Books {
 const bookArchive = [];
 const form = document.querySelector('.form');
 const booksDiv = document.querySelector('.books');
-const inputs = document.querySelectorAll('input');
 
 function addNewBook(book) {
   const bookUnit = document.createElement('li');
