@@ -8,6 +8,10 @@ class Books {
 const bookArchive = [];
 const form = document.querySelector('.form');
 const booksDiv = document.querySelector('.books');
+const inputs = document.querySelectorAll('input');
+const allInputs = inputs
+
+console.log(inputs)
 
 function addNewBook(book) {
   const bookUnit = document.createElement('li');
@@ -22,6 +26,8 @@ function addNewBook(book) {
 form.addEventListener('submit', (event) => {
   event.preventDefault();
 
+  const titleInput = document.querySelector('.book-title');
+  const authorInput = document.querySelector('.book-author');
   const title = document.querySelector('.book-title').value;
   const author = document.querySelector('.book-author').value;
   const book = new Books(title, author);
@@ -30,6 +36,9 @@ form.addEventListener('submit', (event) => {
   addNewBook(book);
 
   localStorage.setItem('bookInfo', JSON.stringify(bookArchive));
+
+  titleInput.value = '';
+  authorInput.value = '';
 });
 
 function removeBook(target) {
