@@ -1,25 +1,19 @@
 ul {
   list-style-type: none;
-	padding: 0;
-	/* border: ; */
+  padding: 0;
 }
 
 li {
   list-style-type: none;
-	/* padding: 0; */
-	width: 350px;
-	border-bottom: 1px solid gray;
-
-	padding-bottom: 10px;
-	/* border-block-start-width: ; */
-	/* border */
-	/* border-bottom-height: 2px; */
+  width: 350px;
+  border-bottom: 1px solid gray;
+  padding-bottom: 10px;
 }
 
 .add {
-	margin-bottom: 15px;
+  margin-bottom: 15px;
 }
 
 main {
-	margin-left: 20px;
+  margin-left: 20px;
 }
