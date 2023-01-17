@@ -9,9 +9,6 @@ const bookArchive = [];
 const form = document.querySelector('.form');
 const booksDiv = document.querySelector('.books');
 const inputs = document.querySelectorAll('input');
-const allInputs = inputs
-
-console.log(inputs)
 
 function addNewBook(book) {
   const bookUnit = document.createElement('li');
