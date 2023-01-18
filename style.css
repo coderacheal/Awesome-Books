@@ -7,7 +7,7 @@ ul {
   list-style-type: none;
 }
 
-li {
+.books-li {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
@@ -18,7 +18,7 @@ li {
   padding: 0 1%;
 }
 
-li:nth-child(odd) {
+.books-li:nth-child(odd) {
   background-color: #a3a2a2;
 }
 
