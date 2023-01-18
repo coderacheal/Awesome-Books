@@ -47,7 +47,8 @@ class CreateNewBook {
     bookUnit.className = 'books-li';
     bookUnit.id = book.id;
     bookUnit.innerHTML = `
-        <p class="book-name">${book.title}</p>
+        <p class="book-name">${book.title}</p> 
+        <p>By</p>
         <p class="the-auhtor">${book.author}</p>
         <button class='removeBook'>Remove</button>
         `;
@@ -92,6 +93,11 @@ class CreateNewBook {
     books.splice(index, 1);
     localStorage.setItem('bookInfo', JSON.stringify(books));
   }
+
+  static displayOnLoad() {
+    // if ()
+    viewList.style.display = 'flex';
+  }
 }
 
 form.addEventListener('submit', (event) => {
@@ -122,4 +128,5 @@ booksDiv.addEventListener('click', (e) => {
   CreateNewBook.removeBookFromStorage(e.target);
 });
 
-window.addEventListener('load', CreateNewBook.displayBooksFromStorage);
+window.addEventListener('load', CreateNewBook.displayBooksFromStorage());
+window.addEventListener('load', CreateNewBook.displayOnLoad());
