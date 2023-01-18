@@ -9,7 +9,8 @@ main {
 
 header {
   background-color: #000;
-  top: 0;
+  width: 95%;
+  margin: auto;
 }
 
 .nav-bar {
@@ -76,8 +77,7 @@ input {
 }
 
 .my-grid {
-  /* display: flex;
-  flex-direction: column; */
+  flex-direction: column;
   display: none;
   margin: 0 5%;
   width: 90%;
@@ -124,12 +124,12 @@ footer {
   bottom: 0;
   right: 0;
   left: 0;
+  width: 95%;
+  margin: auto;
 }
 
 .contact-info {
-  /* display: flex;
-
-  flex-direction: column; */
+  flex-direction: column;
   display: none;
   width: 50%;
   align-items: center;
@@ -141,6 +141,12 @@ footer {
 }
 
 .date {
-  background-color: red;
+  display: flex;
+  justify-content: flex-end;
+
+  /* background-color: red; */
   height: 20px;
+  width: 95%;
+  margin: auto;
+  font-size: 20px;
 }
