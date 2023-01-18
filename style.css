@@ -106,7 +106,14 @@ input {
   border-radius: 5px;
 }
 
-button:hover {
+.removeBook:hover {
+  background-color: rgb(240, 24, 4);
+  border: 0;
+  transition: 0.9s;
+  font-weight: bold;
+}
+
+.add:hover {
   background-color: white;
   color: black;
   font-weight: bold;
@@ -143,8 +150,6 @@ footer {
 .date {
   display: flex;
   justify-content: flex-end;
-
-  /* background-color: red; */
   height: 20px;
   width: 95%;
   margin: auto;
