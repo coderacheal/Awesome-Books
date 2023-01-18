@@ -1,8 +1,9 @@
 /* eslint-disable max-classes-per-file */
 class Books {
-  constructor(title, author) {
+  constructor(title, author, id) {
     this.title = title;
     this.author = author;
+    this.id = id;
   }
 }
 
@@ -12,10 +13,11 @@ const booksDiv = document.querySelector('.books');
 class CreateNewBook {
   static addNewBook(book) {
     const bookUnit = document.createElement('li');
+    bookUnit.id = book.id;
     bookUnit.innerHTML = `
         <p class="book-name">${book.title}</p>
         <p class="the-auhtor">${book.author}</p>
-        <button class='removeBook' id=${Books.id}>Remove</button>
+        <button class='removeBook'>Remove</button>
         `;
     booksDiv.appendChild(bookUnit);
     booksDiv.style.border = '3px solid black';
@@ -53,23 +55,22 @@ class CreateNewBook {
 
   static removeBookFromStorage(element) {
     const books = CreateNewBook.loadFromStorage();
-    const title = element.parentElement.firstElementChild.innerHTML;
-    const index = books.findIndex((book) => book.title === title);
+    const { id } = element.parentElement;
+    const index = books.findIndex((book) => book.id === id);
     books.splice(index, 1);
-
     localStorage.setItem('bookInfo', JSON.stringify(books));
   }
 }
 
 form.addEventListener('submit', (event) => {
   event.preventDefault();
-  // const books = loadFromStorage();
   const titleInput = document.querySelector('.book-title');
   const authorInput = document.querySelector('.book-author');
   const title = document.querySelector('.book-title').value;
   const author = document.querySelector('.book-author').value;
-  const book = new Books(title, author);
   const books = CreateNewBook.loadFromStorage();
+
+  const book = new Books(title, author, Date.now());
   books.push(book);
   CreateNewBook.addNewBook(book);
   CreateNewBook.loadFromStorage();
