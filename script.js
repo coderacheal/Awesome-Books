@@ -41,6 +41,7 @@ class Books {
   }
 }
 
+
 class CreateNewBook {
   static addNewBook(book) {
     const bookUnit = document.createElement('li');

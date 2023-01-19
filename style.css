@@ -36,6 +36,10 @@ header {
   text-decoration: none;
 }
 
+.link:hover {
+  color: orange;
+}
+
 .books {
   list-style-type: none;
 }
