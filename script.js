@@ -13,6 +13,7 @@ const date = new Date().toLocaleDateString('en-us', { month: 'long', day: '2-dig
 const time = new Date().toLocaleTimeString('en-us', { hour: 'numeric', minute: '2-digit' });
 const dateTime = `${date} ${time}`;
 
+
 dateContainer.innerHTML = dateTime;
 
 listLink.forEach((link) => link.addEventListener('click', () => {

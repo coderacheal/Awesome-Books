@@ -42,6 +42,8 @@ header {
 
 .books {
   list-style-type: none;
+  overflow: auto;
+  padding: 20px;
 }
 
 .books-li {
@@ -86,6 +88,8 @@ input {
   margin: 0 5%;
   width: 90%;
   align-items: center;
+  /* overflow:auto; */
+  height: 500px;
 }
 
 .add-book {
