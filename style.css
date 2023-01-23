@@ -88,12 +88,15 @@ input {
   margin: 0 5%;
   width: 90%;
   align-items: center;
-  /* overflow:auto; */
   height: 500px;
 }
 
 .add-book {
   display: none;
+}
+
+.load:hover {
+  color: blue;
 }
 
 .enter-book-and-title {

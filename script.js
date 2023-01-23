@@ -5,6 +5,7 @@ const booksDiv = document.querySelector('.books');
 const addNew = document.querySelector('.add-book');
 const viewList = document.querySelector('.my-grid');
 const viewContact = document.querySelector('.contact-info');
+const allNavLinks = document.querySelectorAll('.load');
 const listLink = document.querySelectorAll('.link-1');
 const AddLink = document.querySelectorAll('.link-2');
 const contactLink = document.querySelectorAll('.link-3');
@@ -12,7 +13,6 @@ const dateContainer = document.querySelector('.date');
 const date = new Date().toLocaleDateString('en-us', { month: 'long', day: '2-digit', year: 'numeric' });
 const time = new Date().toLocaleTimeString('en-us', { hour: 'numeric', minute: '2-digit' });
 const dateTime = `${date} ${time}`;
-
 
 dateContainer.innerHTML = dateTime;
 
@@ -41,7 +41,6 @@ class Books {
     this.id = id;
   }
 }
-
 
 class CreateNewBook {
   static addNewBook(book) {
