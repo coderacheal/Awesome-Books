@@ -1,5 +1,5 @@
 <a name="Awesome_Books"></a>
-<div align="center">
+
   <br/>
   <h3><b>Awesome_Books</b></h3>
 </div>
