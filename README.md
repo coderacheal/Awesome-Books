@@ -48,7 +48,7 @@ HTML5 and css3 which the latest versions were used in this project.
 
 ## 🚀 Live Demo <a name="live-demo"></a>
 
-- [Live Demo Link]()
+- [Live Demo Link](https://coderacheal.github.io/Awesome-Books/)
 
 <!-- GETTING STARTED -->
 
